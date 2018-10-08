@@ -1,0 +1,1 @@
+//把一个文件夹封装为一个包（package），即模块的集合//当导入一个包的时候，会从package.json中查找main字段所对应的.js文件进行操作//如果没找到则寻找index.js或者index.nodelet pack = require('./somepackage/lib/interface');pack.hello();

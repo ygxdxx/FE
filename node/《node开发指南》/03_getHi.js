@@ -1,0 +1,1 @@
+let Say = require('./03_Hi');let say = new Say();say.setName('小红');say.getName();
