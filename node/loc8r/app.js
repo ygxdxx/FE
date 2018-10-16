@@ -3,10 +3,11 @@ var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('./app_server/models/db');
+//让MongoDB的连接启动尽量靠前
+require('./app_api/models/db');
 
-var indexRouter = require('./app_server/routes/index');
-var usersRouter = require('./app_server/routes/users');
+var routes = require('./app_server/routes/index');
+var routesApi = require('./app_api/routes/index');
 
 var app = express();
 
@@ -20,8 +21,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//两套路由系统 app_server & api
+app.use('/', routes);
+app.use('/api', routesApi);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

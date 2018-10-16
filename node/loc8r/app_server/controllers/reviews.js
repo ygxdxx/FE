@@ -1,0 +1,1 @@
+var reviewsCreate = function () {};var reviewsReadOne = function () {};var reviewsUpdateOne = function () {};var reviewDeleteOne = function () {};module.exports.reviewsCreate = reviewsCreate;module.exports.reviewsReadOne = reviewsReadOne;module.exports.reviewsUpdateOne = reviewsUpdateOne;module.exports.reviewsDeleteOne = reviewDeleteOne;
