@@ -1,0 +1,1 @@
+(function () {    angular.module('loc8rApp').directive('footerGeneric', footerGeneric);    function footerGeneric() {        return {            restrict: 'EA',            templateUrl: '/commom/directives/footerGeneric/footerGeneric.template.html'        };    }})();

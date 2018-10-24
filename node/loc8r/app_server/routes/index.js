@@ -3,8 +3,7 @@ var router = express.Router();
 
 var others = require('../controllers/others');
 
-router.get('/',others.angularApp);
-
+// router.get('/',others.angularApp);
 // var locations = require('../controllers/locations');
 // router.get('/', locations.homepage);
 // router.get('/location/:locationid', locations.detailpage);
