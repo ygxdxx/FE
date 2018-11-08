@@ -1,0 +1,1 @@
+document.getElementById('app').innerHTML = '这是第一个打包的文件';// const Vue = require('vue/dist/vue');// new Vue({//     el: '#main',//     data: {//         message: 'hello vue.js'//     }// });//webpack本身是只能支持js的打包分析的，但是可以通过loader来加载第三方的工具帮助处理其他格式的文件require('./first.js');//此处require时候!style-loader!css-loader是安装的第三方loader，非常麻烦。如果能自动根据文件的拓展名后缀名来执行就好了require('./style.css');
