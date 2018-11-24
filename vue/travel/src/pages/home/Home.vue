@@ -1,15 +1,19 @@
 <template>
   <!--template只能存入一个标签,因此使用div进行包裹-->
   <div>
-    hello
+    <home-header/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Home'
-}
-</script>
+  import HomeHeader from './components/Header'
 
+  export default {
+    name: 'Home',
+    components: {
+      HomeHeader
+    }
+  }
+</script>
 <style scoped>
 </style>
