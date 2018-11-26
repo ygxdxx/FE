@@ -93,7 +93,7 @@
     padding-bottom: 50%
 
   .icons
-    margin-top: .1rem
+    margin-top: 0.1rem
     .icon
       position: relative
       overflow: hidden
