@@ -1,25 +1,25 @@
 <template>
   <div class="icons">
-    <div
-      v-for="item of iconList"
-      :key="item.iconId"
-      class="icon">
-      <div class="icon-img">
-        <img
-          :src="item.iconUrl"
-          class="img-content"
-        >
-      </div>
-      <p class="icon-desc">{{item.iconDesc}}</p>
-    </div>
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(page, index) of pages" :key="index">
+        <div v-for="item of page" :key="item.iconId" class="icon">
+          <div class='icon-img'>
+            <img class='icon-img-content' :src='item.iconUrl'/>
+          </div>
+          <p class="icon-desc">{{ item.iconDesc }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
-
 <script>
   export default {
     name: 'HomeIcons',
     data() {
       return {
+        swiperOption: {
+          autoplay: false
+        },
         iconList: [
           {
             iconId: '0001',
@@ -86,41 +86,41 @@
 </script>
 
 <style scoped lang="stylus">
-  @import "~styles/varibles.styl"
-  @import "~styles/minxins.styl"
-  .icons
-    touch-action: none
-    display: flex
-    flex-wrap: wrap
-    width: 100%
+  @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
+  .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
+
+  .icons
+    margin-top: .1rem
     .icon
+      position: relative
       overflow: hidden
-      position relative
+      float: left
       width: 25%
       height: 0
-      padding-bottom 25%
+      padding-bottom: 25%
       .icon-img
         position: absolute
         top: 0
         left: 0
         right: 0
-        bottom: 0.4rem
-        box-sizing border-box
-        padding: 0.1rem
-        .img-content
-          height: 100%
+        bottom: .44rem
+        box-sizing: border-box
+        padding: .1rem
+        .icon-img-content
           display: block
           margin: 0 auto
+          height: 100%
       .icon-desc
         position: absolute
         left: 0
         right: 0
         bottom: 0
-        height: 0.44rem
-        line-height: 0.44rem
-        text-align center
+        height: .44rem
+        line-height: .44rem
+        text-align: center
         color: $darkTextColor
         ellipsis()
 </style>
