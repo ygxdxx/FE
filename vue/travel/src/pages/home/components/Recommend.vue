@@ -2,13 +2,13 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li v-for="item of recommendList" class="item border-bottom">
+      <li v-for="item of list" class="item border-bottom">
         <!-- 组件属性不写冒号就只是一个字符串，加了冒号则为一个变量或者表达式 -->
         <img :src="item.imgUrl" alt="" class="item-img">
         <div class="item-info">
           <p class="item-title">{{ item.title }}</p>
           <p class="item-desc">{{ item.desc }}</p>
-          <button class="item-button">{{ item.price }}</button>
+          <button class="item-button">99元起</button>
         </div>
       </li>
     </ul>
@@ -18,39 +18,8 @@
 <script>
   export default {
     name: "HomeRecommend",
-    data() {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/91/9103c54e49fab2a3a3.img.jpg_200x200_1211295b.jpg',
-            title: '沈阳清河半岛温泉度假酒店',
-            desc: '暂未添加描述',
-            price: '99元起'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://img1.qunarzz.com/tuan/team2/1507/9e/281c1131109807.jpg_200x200_b4259cb3.jpg',
-            title: '格林天沐温泉',
-            desc: '暂未添加描述',
-            price: '99元起'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/6b/6b3372e0241c034890.water.jpg_200x200_8fcbb4da.jpg',
-            title: '沈阳怪坡国际滑雪场',
-            desc: '暂未添加描述',
-            price: '99元起'
-          },
-          {
-            id: '0004',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1806/f5/f5b14f6fad705fe8a3.img.jpg_200x200_12b30406.jpg',
-            title: '沈阳国家地理探险家中心',
-            desc: '暂未添加描述',
-            price: '99元起'
-          }
-        ]
-      }
+    props: {
+      list: Array
     }
   }
 </script>
