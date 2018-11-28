@@ -50,7 +50,7 @@
           if (this.timer) {
             clearTimeout(this.timer)
           }
-          setTimeout(() => {
+          this.timer = setTimeout(() => {
             // const elem = document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY)
             const touchY = e.touches[0].clientY - 79
             const index = Math.floor((touchY - this.startY) / 20)
