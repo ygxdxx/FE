@@ -16,7 +16,6 @@
   import HomeWeekend from './components/Weekend'
   import axios from 'axios'
 
-
   export default {
     name: 'Home',
     components: {
@@ -51,7 +50,6 @@
         }
       }
     },
-    //挂在之后就进行数据获取
     mounted() {
       this.getHomeInfo()
     }
