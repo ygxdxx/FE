@@ -17,10 +17,24 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  import state from "../../../store/state";
+
   export default {
     name: 'HomeHeader',
-    props: {
-      city: String
+    // computed: {
+    // city() {
+    // ...mapState(['city'])
+    // return this.$store.state.city
+    // }
+    // }
+    // computed: mapState({
+    //   city: 'city'
+    // city: (state) => {state.city}
+    // })
+    computed: {
+      // ...mapState({city:'city'})
+      ...mapState(['city'])
     }
   }
 </script>
@@ -49,7 +63,10 @@
       line-height: 0.64rem
       padding-left: 0.2rem
     .header-right
-      width: 1.24rem
+      box-sizing border-box
+      min-width: 1.04rem
+      padding-left 0.1rem
+      padding-right 0.1rem
       float: right
       text-align: center
       color: #fff
