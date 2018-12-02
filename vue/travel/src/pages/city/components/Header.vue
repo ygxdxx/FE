@@ -25,6 +25,7 @@
     background: $bgColor
     font-size: 0.3rem
     position: relative
+
     .header-back
       width: 0.64rem
       text-align: center

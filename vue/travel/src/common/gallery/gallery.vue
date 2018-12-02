@@ -29,7 +29,7 @@
           pagination: '.swiper-pagination',
           paginationType: 'fraction',
           observeParents: true,
-          observe: true,
+          observer: true,
         }
       }
     },
